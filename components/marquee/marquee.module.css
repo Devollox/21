@@ -1,0 +1,44 @@
+.marguee {
+    margin-top: 50px;
+    color: white;
+    user-select: none;
+    --duration: 50s;
+    --delay: 0s;
+    --direction: normal;
+    --pauseOnHover: running;
+    --pauseOnClick: running;
+    --pauseAnimation: running;
+    --gradient-color: rgba(255, 255, 255, 1), rgba(255, 255, 255, 0);
+    --gradient-length: 200px;
+    --min-width: 100%;
+    --min-height: auto;
+    --orientation: scrollX;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex: 0 0 auto;
+    min-width: var(--min-width);
+    min-height: var(--min-height);
+    z-index: 1;
+    animation: var(--orientation) var(--duration) linear var(--delay) var(--loops);
+    animation-play-state: var(--pauseAnimation);
+    animation-direction: var(--direction);
+}
+.marquee_item {
+    align-items: center;
+    background-color: #ffffff1a;
+    border-radius: 8px;
+    display: flex;
+    font-size: 14px;
+    font-weight: 500;
+    gap: 8px;
+    line-height: 20px;
+    margin: 0 4px;
+    padding: 8px;
+}
+.marquee_item img {
+    object-fit: cover;
+    border-radius: 4px;
+    height: 36px;
+    width: 36px;
+}

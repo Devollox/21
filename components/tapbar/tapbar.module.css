@@ -1,0 +1,38 @@
+.g_tapbar_item {
+    text-decoration: none;
+    height: 36px;
+}
+.g_tapbar {
+    display: none;
+    font-family: Geometria, Inter, Avenir, Helvetica, Arial, sans-serif;
+    align-items: center;
+    --tw-bg-opacity: 1;
+    background-color: rgb(33 34 39 / var(--tw-bg-opacity));
+    height: 60px;
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    right: 0;
+    z-index: 100;
+    justify-content: center;
+    -moz-column-gap: .75rem;
+}
+.g_tapbar_title {
+    color: white;
+}
+.g_tapbar_icon {
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+}
+@media (max-width: 767px) {
+    .g_tapbar {
+        height: 52px;
+    }
+}
+@media (max-width: 1280px) {
+    .g_tapbar {
+        display: flex;
+    }
+}
