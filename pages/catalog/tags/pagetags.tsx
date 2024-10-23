@@ -4,8 +4,8 @@ import React from "react";
 import Error from "@/components/error";
 import MainContent from "@/components/maincontent";
 import MoreCards from "@/components/morecards";
-import TitleCatalog from "@/pages/catalog/titlecatolog";
-import TagsWrapper from "@/pages/catalog/tagswrapper";
+import TitleCatalog from "@/pages/catalog/help/titlecatolog";
+import TagsWrapper from "@/pages/catalog/help/tagswrapper";
 
 interface Props {
   catalog?: any;

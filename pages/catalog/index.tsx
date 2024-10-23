@@ -5,8 +5,8 @@ import MainContent from "@/components/maincontent";
 import Page from "@/components/page";
 import SwiperCart from "@/components/swipercart";
 import {data as data_top} from "../../public/games/top_sell_shop.json"
-import TitleCatalog from "@/pages/catalog/titlecatolog";
-import TagsWrapper from "@/pages/catalog/tagswrapper";
+import TitleCatalog from "@/pages/catalog/help/titlecatolog";
+import TagsWrapper from "@/pages/catalog/help/tagswrapper";
 import {catalog as data} from "../../public/games/tags_catalog.json"
 
 
