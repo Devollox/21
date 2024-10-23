@@ -23,8 +23,8 @@ const SearchComponent: React.FC = () => {
   const [isPopupVisible, setIsPopupVisible] = useState(false);
   const popupRef = useRef<HTMLDivElement>(null);
 
-  const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value;
+  const handleSearch = (block: React.ChangeEvent<HTMLInputElement>) => {
+    const value = block.target.value;
     setSearchTerm(value);
 
     if (value.trim() !== '') {
