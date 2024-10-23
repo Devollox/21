@@ -23,8 +23,10 @@ const SearchComponent: React.FC = () => {
   const [isPopupVisible, setIsPopupVisible] = useState(false);
   const popupRef = useRef<HTMLDivElement>(null);
 
-  const handleSearch = (block: React.ChangeEvent<HTMLInputElement>) => {
-    const value = block.target.value;
+const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
+  // Проверяем, что e и e.target определены
+  if (e && e.target) {
+    const value = e.target.value;
     setSearchTerm(value);
 
     if (value.trim() !== '') {
@@ -39,7 +41,10 @@ const SearchComponent: React.FC = () => {
       setFilteredGames([]);
       setIsPopupVisible(false);
     }
-  };
+  } else {
+    console.error('undefined');
+  }
+};
 
   const handleInputClick = () => {
     setIsPopupVisible(filteredGames.length > 0);
