@@ -1,0 +1,94 @@
+{
+  "data": [
+    {
+      "title": "Dark Souls 3",
+      "slug": "dark-souls-iii-steam-rucis",
+      "idImg": "374320",
+      "description": "Dark Souls III — компьютерная игра в жанре Action/RPG, разработанная компанией FromSoftware.",
+      "views": 432,
+      "informationPrice": {
+        "price": 1000,
+        "discount": {
+          "bool": false,
+          "informationDiscount": "20"
+        }
+      },
+      "exclusive": "false",
+      "tag": [
+        "Игра", "Steam"
+      ]
+    },
+    {
+      "title": "God of War Ragnarök",
+      "slug": "god-of-war-ragnarok-steam-gl-no-cis",
+      "idImg": "2322010",
+      "description": "God of War — основана на древнегреческой и скандинавской мифологии.",
+      "views": 345,
+      "informationPrice": {
+        "price": 1000,
+        "discount": {
+          "bool": true,
+          "informationDiscount": "20"
+        }
+      },
+      "exclusive": "true",
+      "tag": [
+        "Игра", "Steam"
+      ]
+    },
+    {
+      "title": "ELDEN RING Shadow of the  Erdtree",
+      "slug": "elden-ring-shadow-of-the-erdtree-premium-bundle-steam-rucis",
+      "idImg": "2778580",
+      "description": "Elden Ring — компьютерная игра в жанре action/RPG с открытым миром.",
+      "views": 432,
+      "informationPrice": {
+        "price": 1000,
+        "discount": {
+          "bool": true,
+          "informationDiscount": "20"
+        }
+      },
+      "exclusive": "true",
+      "tag": [
+        "DLC", "Steam"
+      ]
+    },
+    {
+      "title": "Black Myth Wukong",
+      "idImg": "2358720",
+      "slug": "black-myth-wukong-deluxe-edition-steam-rucis",
+      "description": "Black Myth: Wukong — Станьте Избранным и отправляйтесь в приключение, полное испытаний, чудес и опасностей.",
+      "views": 233,
+      "informationPrice": {
+        "price": 1000,
+        "discount": {
+          "bool": false,
+          "informationDiscount": "20"
+        }
+      },
+      "exclusive": "false",
+      "tag": [
+        "Игра", "Steam"
+      ]
+    },
+    {
+      "title": "Frostpunk 2",
+      "idImg": "1601580",
+      "slug": "frostpunk-2-steam-rucis",
+      "description": "Frostpunk 2 — игра включает в себя элементы стимпанка и альтернативной истории.",
+      "views": 890,
+      "informationPrice": {
+        "price": 1000,
+        "discount": {
+          "bool": false,
+          "informationDiscount": "20"
+        }
+      },
+      "exclusive": "true",
+      "tag": [
+        "Игра", "Steam"
+      ]
+    }
+  ]
+}

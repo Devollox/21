@@ -1,0 +1,42 @@
+{
+  "catalog": [
+    {
+      "title": "Игры",
+      "href": "/game",
+      "tags": [
+        {
+          "title": "Ключи Steam",
+          "href": "/steam"
+        },
+        {
+          "title": "Ключи Rockstar",
+          "href": "/rockstar"
+        },
+        {
+          "title": "Ключи Nintendo",
+          "href": "/nintendo"
+        },
+        {
+          "title": "Ключи Xbox",
+          "href": "/xbox"
+        },
+        {
+          "title": "DLC для игр",
+          "href": "/dlc"
+        }
+      ]
+    },
+    {
+      "title": "Подписки",
+      "href": "/subscription",
+      "tags": [
+      ]
+    },
+    {
+      "title": "Валюта",
+      "href": "/сurrency",
+      "tags": [
+      ]
+    }
+  ]
+}

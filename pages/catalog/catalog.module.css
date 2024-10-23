@@ -1,0 +1,103 @@
+.catalog_content_wrapper {
+    flex-shrink: 0;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition-property: transform;
+    display: block;
+}
+.catalog_content_wrapper {
+    border-radius: 12px;
+    background: #14151b;
+    z-index: 999;
+    flex-shrink: 0;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: block;
+    box-shadow: none;
+}
+.catalog_content_wrapper {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@media (max-width: 1550px) {
+    .catalog_content_wrapper {
+        height: 294px;
+        width: 196px;
+    }
+}
+@media (max-width: 1280px) {
+    .catalog_content_wrapper {
+        height: 244px;
+        width: 174px;
+    }
+}
+@media (max-width: 767px) {
+    .catalog_content_wrapper {
+        height: 300px;
+        width: 200px;
+    }
+}
+.card_list_link {
+    position: relative !important;
+}
+.catalog_content_wrapper {
+    width: 240px;
+    height: 360px;
+}
+.tags_container {
+    flex-grow: 1;
+    overflow: hidden;
+    position: relative;
+    transition: height .3s ease;
+}
+.tags_item {
+    width: auto;
+}
+.tags_items {
+    align-items: center;
+    display: flex;
+    border: 1px solid hsla(0, 0%, 100%, .1);
+    border-radius: 26px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    max-height: 42px;
+    padding: 10px 12px;
+    transition: background-color .3s ease;
+    color: white;
+    text-decoration: none;
+}
+.tags_items:hover {
+    background-color: #ffffff1a;
+}
+.tags_list_more div {
+    text-align: center;
+    background-color: #ffffff1a;
+    border-radius: 26px;
+    width: 105px;
+    opacity: .9;
+    transition: opacity .3s ease;
+}
+.tags_list_more div:hover {
+    opacity: 1;
+}
+.wrapper_tags_list {
+    height: 42px;
+    flex-grow: 1;
+    overflow: hidden;
+    position: relative;
+    transition: height .3s ease;
+}
+.tags_list {
+    min-height: 42px;
+    width: 80%;
+    flex-wrap: wrap;
+    display: flex;
+    gap: 4px;
+}

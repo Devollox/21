@@ -1,0 +1,459 @@
+.swiper_button .swiper-slide img {
+    position: relative;
+    height: 64px;
+    width: 64px;
+    object-fit: cover;
+}
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.swiper-slide img {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.swiper_main_mobail .swiper-slide {
+    width: 90%;
+}
+@media (max-width: 1281px) {
+    .swiper_button .swiper-slide img {
+        height: 58px;
+        width: 58px;
+    }
+}
+@media (max-width: 1239px) {
+    .swiper_button .swiper-slide img {
+        border-radius: 8px;
+        height: 40px;
+        width: 40px;
+    }
+}
+.swiper_main {
+    margin-right: 20px !important;
+    height: 548px;
+}
+@media (max-width: 1281px) {
+    .swiper_main {
+        height: 430px;
+    }
+}
+@media (max-width: 832px) {
+    .swiper_main {
+        height: 350px;
+    }
+}
+@media (min-width: 1281px) {
+    .swiper_main {
+        display: grid;
+        grid-auto-columns: 938px 1fr;
+        grid-column-gap: 16px;
+    }
+}
+@media (max-width: 1439px) {
+    .swiper_main {
+        max-width: 1266px;
+    }
+}
+.swiper_main_mobail .swiper-wrapper {
+    max-height: 320px;
+}
+.swiper_main .swiper-slide::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    background-image: linear-gradient(90deg, rgba(0, 0, 0, .7), transparent);
+    z-index: 1;
+}
+.swiper_wrapper .swiper-slide {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: transparent;
+    border: 1px solid hsla(0, 0%, 100%, .1);
+    border-radius: 12px;
+    cursor: pointer;
+    height: auto;
+    overflow: hidden;
+    pointer-events: all;
+    width: auto;
+}
+.swiper-slide {
+    border-radius: 12px;
+    background: #14151b;
+    z-index: 999;
+    flex-shrink: 0;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: block;
+}
+.swiper-slide {
+    border-radius: 12px;
+    background: #14151b;
+    z-index: 1 !important;
+    flex-shrink: 0;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: block;
+    box-shadow: none;
+}
+.wrapper_container {
+    width: 100%;
+    height: 100%;
+}
+.swiper_main_mobail .swiper-slide {
+    transition-duration: .3s;
+    transition-property: height, padding, box-shadow, opacity;
+    transition-timing-function: ease-in-out;
+    opacity: .1;
+}
+.swiper_main_mobail .swiper-slide-active {
+    opacity: 1;
+}
+.swiper_main_mobail .swiper-slide-active .margin_flex_content {
+    transition: .3s;
+    margin-left: 20px !important;
+    margin-right: 20px !important;
+    margin-bottom: 24px !important;
+}
+.swiper_main_mobail .swiper-slide-active .margin_flex_img {
+    transition: .3s;
+    margin-top: 24px !important;
+    margin-left: 20px !important;
+}
+.swiper_main_mobail .swiper-slide .margin_flex_content {
+    transition: .3s;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 14px;
+}
+.swiper_main_mobail .swiper-slide .margin_flex_img {
+    transition: .3s;
+    margin-top: 14px;
+    margin-left: 20px;
+}
+.swiper_main_mobail .swiper-slide-invisible-blank {
+    visibility: hidden;
+}
+@keyframes swiper-preloader-spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+.swiper_button {
+    width: 372px;
+    height: 548px;
+}
+@media (max-width: 1281px) {
+    .swiper_button {
+        height: 430px;
+    }
+}
+.swiper_button .swiper-wrapper {
+    display: grid;
+    gap: 12px
+}
+@media (max-width: 1281px) {
+    .swiper_button .swiper-wrapper {
+        gap: 9.4px
+    }
+}
+@media (max-width: 1239px) {
+    .swiper_button .swiper-wrapper {
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    }
+    .swiper_button {
+        height: auto;
+        margin-top: 20px;
+        width: 100%;
+    }
+}
+.swiper_button .swiper-wrapper .swiper-slide {
+    height: 64px !important;
+    padding: 15px 20px 15px 15px;
+    background-color: transparent;
+    border: 1px solid hsla(0, 0%, 100%, .1);
+    border-radius: 10px;
+    cursor: pointer;
+    overflow: hidden;
+    pointer-events: all;
+    width: auto;
+}
+@media (max-width: 832px) {
+    .swiper_button {
+        display: none;
+    }
+}
+@media (max-width: 1281px) {
+    .swiper_button .swiper-wrapper .swiper-slide {
+        padding: 9px 9px 9px 9px;
+        height: 58px !important;
+    }
+}
+@media (max-width: 1239px) {
+    .swiper_button .swiper-wrapper .swiper-slide {
+        padding: 9px 9px 9px 9px;
+        height: 40px !important;
+    }
+}
+.swiper_button .swiper-wrapper .swiper-slide-thumb-active {
+    background: linear-gradient(to right, #37383d 0%, #202127 1%);
+    animation: swiper-slide-thumb-active_background 2500ms forwards;
+}
+.swiper_main_mobail .swiper-pagination-bullet-active {
+    background-color: #fff9 !important;
+    width: 20px !important;
+    border-radius: 12px !important;
+    height: 8px !important;
+    padding: 0 !important;
+    pointer-events: none !important;
+    transition-duration: .3s !important;
+    transition-property: width, background-color !important;
+    transition-timing-function: ease-in-out !important;
+}
+.swiper_main_mobail .swiper-pagination-bullet {
+    border-radius: 12px !important;
+    background-color: #ffffff26;
+    width: 8px;
+    height: 8px;
+    transition-duration: .3s;
+    transition-property: width, background-color;
+    transition-timing-function: ease-in-out;
+}
+.swiper_main_mobail .swiper-pagination {
+    position: absolute;
+}
+@media (max-width: 832px) {
+    .swiper_main {
+        display: none;
+    }
+    .swiper_main_mobail {
+        display: flex
+    }
+}
+
+@media (min-width: 832px) {
+    .swiper_main {
+        display: flex;
+    }
+    .swiper_main_mobail {
+        display: none
+    }
+    .swiper_main .swiper-slide .margin_flex_content {
+        margin-left: 20px;
+        margin-right: 20px;
+        margin-bottom: 20px;
+    }
+    .swiper_main .swiper-slide .margin_flex_img {
+        margin-top: 20px;
+        margin-left: 20px;
+    }
+}
+@keyframes swiper-slide-thumb-active_background {
+    1% {background: linear-gradient(to right, #37383d 0%, #202127 1%);}
+    2% {background: linear-gradient(to right, #37383d 1%, #202127 2%);}
+    3% {background: linear-gradient(to right, #37383d 2%, #202127 3%);}
+    4% {background: linear-gradient(to right, #37383d 3%, #202127 4%);}
+    5% {background: linear-gradient(to right, #37383d 4%, #202127 5%);}
+    6% {background: linear-gradient(to right, #37383d 5%, #202127 6%);}
+    7% {background: linear-gradient(to right, #37383d 6%, #202127 7%);}
+    8% {background: linear-gradient(to right, #37383d 7%, #202127 8%);}
+    9% {background: linear-gradient(to right, #37383d 8%, #202127 9%);}
+    10% {background: linear-gradient(to right, #37383d 9%, #202127 10%);}
+    11% {background: linear-gradient(to right, #37383d 10%, #202127 11%);}
+    12% {background: linear-gradient(to right, #37383d 11%, #202127 12%);}
+    13% {background: linear-gradient(to right, #37383d 12%, #202127 13%);}
+    14% {background: linear-gradient(to right, #37383d 13%, #202127 14%);}
+    15% {background: linear-gradient(to right, #37383d 14%, #202127 15%);}
+    16% {background: linear-gradient(to right, #37383d 15%, #202127 16%);}
+    17% {background: linear-gradient(to right, #37383d 16%, #202127 17%);}
+    18% {background: linear-gradient(to right, #37383d 17%, #202127 18%);}
+    19% {background: linear-gradient(to right, #37383d 18%, #202127 19%);}
+    20% {background: linear-gradient(to right, #37383d 19%, #202127 20%);}
+    21% {background: linear-gradient(to right, #37383d 20%, #202127 21%);}
+    22% {background: linear-gradient(to right, #37383d 21%, #202127 22%);}
+    23% {background: linear-gradient(to right, #37383d 22%, #202127 23%);}
+    24% {background: linear-gradient(to right, #37383d 23%, #202127 24%);}
+    25% {background: linear-gradient(to right, #37383d 24%, #202127 25%);}
+    26% {background: linear-gradient(to right, #37383d 25%, #202127 26%);}
+    27% {background: linear-gradient(to right, #37383d 26%, #202127 27%);}
+    28% {background: linear-gradient(to right, #37383d 27%, #202127 28%);}
+    29% {background: linear-gradient(to right, #37383d 28%, #202127 29%);}
+    30% {background: linear-gradient(to right, #37383d 29%, #202127 30%);}
+    31% {background: linear-gradient(to right, #37383d 30%, #202127 31%);}
+    32% {background: linear-gradient(to right, #37383d 31%, #202127 32%);}
+    33% {background: linear-gradient(to right, #37383d 32%, #202127 33%);}
+    34% {background: linear-gradient(to right, #37383d 33%, #202127 34%);}
+    35% {background: linear-gradient(to right, #37383d 34%, #202127 35%);}
+    36% {background: linear-gradient(to right, #37383d 35%, #202127 36%);}
+    37% {background: linear-gradient(to right, #37383d 36%, #202127 37%);}
+    38% {background: linear-gradient(to right, #37383d 37%, #202127 38%);}
+    39% {background: linear-gradient(to right, #37383d 38%, #202127 39%);}
+    40% {background: linear-gradient(to right, #37383d 39%, #202127 40%);}
+    41% {background: linear-gradient(to right, #37383d 40%, #202127 41%);}
+    42% {background: linear-gradient(to right, #37383d 41%, #202127 42%);}
+    43% {background: linear-gradient(to right, #37383d 42%, #202127 43%);}
+    44% {background: linear-gradient(to right, #37383d 43%, #202127 44%);}
+    45% {background: linear-gradient(to right, #37383d 44%, #202127 45%);}
+    46% {background: linear-gradient(to right, #37383d 45%, #202127 46%);}
+    47% {background: linear-gradient(to right, #37383d 46%, #202127 47%);}
+    48% {background: linear-gradient(to right, #37383d 47%, #202127 48%);}
+    49% {background: linear-gradient(to right, #37383d 48%, #202127 49%);}
+    50% {background: linear-gradient(to right, #37383d 49%, #202127 50%);}
+    51% {background: linear-gradient(to right, #37383d 50%, #202127 51%);}
+    52% {background: linear-gradient(to right, #37383d 51%, #202127 52%);}
+    53% {background: linear-gradient(to right, #37383d 52%, #202127 53%);}
+    54% {background: linear-gradient(to right, #37383d 53%, #202127 54%);}
+    55% {background: linear-gradient(to right, #37383d 54%, #202127 55%);}
+    56% {background: linear-gradient(to right, #37383d 55%, #202127 56%);}
+    57% {background: linear-gradient(to right, #37383d 56%, #202127 57%);}
+    58% {background: linear-gradient(to right, #37383d 57%, #202127 58%);}
+    59% {background: linear-gradient(to right, #37383d 58%, #202127 59%);}
+    60% {background: linear-gradient(to right, #37383d 59%, #202127 60%);}
+    61% {background: linear-gradient(to right, #37383d 60%, #202127 61%);}
+    62% {background: linear-gradient(to right, #37383d 61%, #202127 62%);}
+    63% {background: linear-gradient(to right, #37383d 62%, #202127 63%);}
+    64% {background: linear-gradient(to right, #37383d 63%, #202127 64%);}
+    65% {background: linear-gradient(to right, #37383d 64%, #202127 65%);}
+    66% {background: linear-gradient(to right, #37383d 65%, #202127 66%);}
+    67% {background: linear-gradient(to right, #37383d 66%, #202127 67%);}
+    68% {background: linear-gradient(to right, #37383d 67%, #202127 68%);}
+    69% {background: linear-gradient(to right, #37383d 68%, #202127 69%);}
+    70% {background: linear-gradient(to right, #37383d 69%, #202127 70%);}
+    71% {background: linear-gradient(to right, #37383d 70%, #202127 71%);}
+    72% {background: linear-gradient(to right, #37383d 71%, #202127 72%);}
+    73% {background: linear-gradient(to right, #37383d 72%, #202127 73%);}
+    74% {background: linear-gradient(to right, #37383d 73%, #202127 74%);}
+    75% {background: linear-gradient(to right, #37383d 74%, #202127 75%);}
+    76% {background: linear-gradient(to right, #37383d 75%, #202127 76%);}
+    77% {background: linear-gradient(to right, #37383d 76%, #202127 77%);}
+    78% {background: linear-gradient(to right, #37383d 77%, #202127 78%);}
+    79% {background: linear-gradient(to right, #37383d 78%, #202127 79%);}
+    80% {background: linear-gradient(to right, #37383d 79%, #202127 80%);}
+    81% {background: linear-gradient(to right, #37383d 80%, #202127 81%);}
+    82% {background: linear-gradient(to right, #37383d 81%, #202127 82%);}
+    83% {background: linear-gradient(to right, #37383d 82%, #202127 83%);}
+    84% {background: linear-gradient(to right, #37383d 83%, #202127 84%);}
+    85% {background: linear-gradient(to right, #37383d 84%, #202127 85%);}
+    86% {background: linear-gradient(to right, #37383d 85%, #202127 86%);}
+    87% {background: linear-gradient(to right, #37383d 86%, #202127 87%);}
+    88% {background: linear-gradient(to right, #37383d 87%, #202127 88%);}
+    89% {background: linear-gradient(to right, #37383d 88%, #202127 89%);}
+    90% {background: linear-gradient(to right, #37383d 89%, #202127 90%);}
+    91% {background: linear-gradient(to right, #37383d 90%, #202127 91%);}
+    92% {background: linear-gradient(to right, #37383d 91%, #202127 92%);}
+    93% {background: linear-gradient(to right, #37383d 92%, #202127 93%);}
+    94% {background: linear-gradient(to right, #37383d 93%, #202127 94%);}
+    95% {background: linear-gradient(to right, #37383d 94%, #202127 95%);}
+    96% {background: linear-gradient(to right, #37383d 95%, #202127 96%);}
+    97% {background: linear-gradient(to right, #37383d 96%, #202127 97%);}
+    98% {background: linear-gradient(to right, #37383d 97%, #202127 98%);}
+    99% {background: linear-gradient(to right, #37383d 98%, #202127 99%);}
+    100% {background: linear-gradient(to right, #37383d 100%, #202127 100%);}
+}
+.swiper_cart .swiper-slide {
+    height: 100%;
+    width: 240px;
+}
+@media (max-width: 767px) {
+    .swiper_cart .swiper-slide {
+        max-width: 164px;
+    }
+}
+@media (max-width: 1280px) {
+    .swiper_cart .swiper-slide {
+        max-width: 174px;
+    }
+}
+@media (max-width: 1550px) {
+    .swiper_cart .swiper-slide {
+        max-width: 196px;
+    }
+}
+.swiper_cart {
+    max-width: 1560px;
+    padding-top: 55px !important;
+}
+@media (max-width: 1620px) {
+    .slider {
+        max-width: 1266px;
+    }
+}
+@media (max-width: 1281px) {
+    .swiper_cart {
+        max-width: 1216px;
+    }
+}
+.swiper-button-disabled {
+    opacity: .5 !important;
+    pointer-events: none;
+}
+.swiper-button-prev {
+    position: absolute !important;
+    left: auto !important;
+    right: var(--swiper-navigation-sides-offset, 60px) !important;
+    top: 0px !important;
+    bottom: 0px !important;
+    color: white !important;
+    align-items: center;
+    background-color: #2b2c32;
+    border: 1px solid hsla(0, 0%, 100%, .1) !important;
+    border-radius: 50% !important;
+    display: flex !important;
+    height: 2.5rem !important;
+    justify-content: center !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    transition: background-color .3s ease !important;
+    width: 2.5rem !important;
+}
+.swiper-button-next {
+    left: auto !important;
+    right: var(--swiper-navigation-sides-offset, 10px) !important;
+    top: 0px !important;
+    bottom: 0px !important;
+    color: white !important;
+    align-items: center !important;
+    background-color: #2b2c32 !important;
+    border: 1px solid hsla(0, 0%, 100%, .1) !important;
+    border-radius: 50% !important;
+    display: flex !important;
+    height: 2.5rem !important;
+    justify-content: center !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    transition: background-color .3s ease !important;
+    width: 2.5rem !important;
+}
+.swiper-button-next:after, .swiper-container-rtl .swiper-button-prev:after {
+    content: url("../public/arrow.svg") !important;
+    font-size: 0px !important;
+    rotate: 180deg;
+}
+.swiper-button-prev:after, .swiper-container-rtl .swiper-button-prev:after {
+    content: url("../public/arrow.svg") !important;
+    font-size: 0px !important;
+}
+@media (max-width: 832px) {
+    .swiper-button-next, .swiper-button-prev {
+        display: none !important;
+    }
+}

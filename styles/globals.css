@@ -1,0 +1,53 @@
+* {
+    margin: 0;
+    padding: 0;
+    border-box: border-box;
+}
+body {
+    height: 100%;
+    font-family: Geometria, Inter, Avenir, Helvetica, Arial, sans-serif;
+    background: #14151b;
+}
+body::-webkit-scrollbar {
+    display: none;
+}
+а, p, div, link, span, applet, object, iframe {
+    text-decoration: none !important;
+}
+button, input, optgroup, select, textarea {
+    color: inherit;
+    font-family: inherit;
+    font-feature-settings: inherit;
+    font-size: 100%;
+    font-variation-settings: inherit;
+    font-weight: inherit;
+    letter-spacing: inherit;
+    line-height: inherit;
+    margin: 0;
+    padding: 0;
+}
+button, input, select, textarea {
+    background-color: transparent;
+    border-style: none;
+}
+.rfm-marquee .rfm-initial-child-container .rfm-child {
+    height: 52px !important;
+}
+.other_button {
+    font-family: Geometria, Inter, Avenir, Helvetica, Arial, sans-serif;
+    justify-items: center;
+    align-self: center;
+    background: #ffffff1a;
+    border-radius: 12px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-bottom: 10px;
+    margin-top: 24px;
+    padding: 18px 0;
+    text-align: center;
+    width: 204px;
+}
