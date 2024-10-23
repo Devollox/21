@@ -7,7 +7,7 @@ interface Props {
   data?: any;
 }
 
-const TagsWrapper: React.FC<Props> = ({ data }) => {
+const TagsWrapper: React.FC<Props> = ({  data = [] }) => {
   const [height, setHeight] = useState(42);
   const [bool, setBool] = useState(false);
   const [tagsListHeight, setTagsListHeight] = useState(42);
