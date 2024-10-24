@@ -5,6 +5,18 @@
       "href": "game",
       "tags": [
         {
+          "title": "Лучшие новинки",
+          "href": "new items"
+        },
+        {
+          "title": "Популярные игры",
+          "href": "popular games"
+        },
+        {
+          "title": "Предзаказы",
+          "href": "pre-order"
+        },
+        {
           "title": "Ключи Steam",
           "href": "steam"
         },
@@ -30,6 +42,14 @@
       "title": "Подписки",
       "href": "subscription",
       "tags": [
+        {
+          "title": "Подписки Xbox",
+          "href": "xbox"
+        },
+        {
+          "title": "Подписки PlayStation",
+          "href": "play station"
+        }
       ]
     },
     {
