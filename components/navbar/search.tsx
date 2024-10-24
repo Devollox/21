@@ -19,35 +19,29 @@ interface Game {
 
 const SearchComponent: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
-  const [filteredGames, setFilteredGames] = useState<Game[]>([]);
+  const [filteredGames, setFilteredGames] = useState<Game[]>(
+    data.data.slice().sort((a, b) => a.name.localeCompare(b.name))
+  );
   const [isPopupVisible, setIsPopupVisible] = useState(false);
   const popupRef = useRef<HTMLDivElement>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
 
-const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
-  // Проверяем, что e и e.target определены
-  if (e && e.target) {
-    const value = e.target.value;
+  const handleSearch = (block: React.ChangeEvent<HTMLInputElement>) => {
+    const value = block.target.value.toLowerCase().replace(/[.:`']/g, '');
     setSearchTerm(value);
 
     if (value.trim() !== '') {
       const results = data.data.filter((game: Game) =>
-        game.name.toLowerCase().includes(value.toLowerCase())
+        game.name.toLowerCase().replace(/[.:`']/g, '').includes(value)
       );
-
-      console.log('Filtered results: ', results);
-      setFilteredGames(results);
-      setIsPopupVisible(results.length > 0);
+      setFilteredGames(results.slice().sort((a, b) => a.name.localeCompare(b.name))); // Создаем копию массива
     } else {
-      setFilteredGames([]);
-      setIsPopupVisible(false);
+      setFilteredGames(data.data.slice().sort((a, b) => a.name.localeCompare(b.name))); // Создаем копию массива
     }
-  } else {
-    console.error('undefined');
-  }
-};
+  };
 
   const handleInputClick = () => {
-    setIsPopupVisible(filteredGames.length > 0);
+    setIsPopupVisible(true);
   };
 
   useEffect(() => {
@@ -56,22 +50,21 @@ const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
         setIsPopupVisible(false);
       }
     };
-
     document.addEventListener('mousedown', handleClickOutside);
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
   }, []);
 
-  const calculateDiscount = (originalPrice: number, discountedPrice: number): number =>{
+  const calculateDiscount = (originalPrice: number, discountedPrice: number): number => {
     const discountAmount = originalPrice - discountedPrice;
     const discountPercentage = (discountAmount / originalPrice) * 100;
     return Math.round(discountPercentage);
   }
 
+
   return (
     <div className={styles.search_button}>
-      {/* Я устал бля */}
       <span>
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
           <g opacity="0.5">
@@ -86,34 +79,38 @@ const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
         value={searchTerm}
         onChange={handleSearch}
         onClick={handleInputClick}
+        ref={inputRef}
       />
       {isPopupVisible && (
         <div className={styles.header_search_popup} ref={popupRef}>
-          {filteredGames.map((game) => (
-            <Link href={`/catalog/${game.slug}`} style={{textDecoration: 'none'}}>
-              <div className={styles.wrapper_cart} style={{display: 'flex', justifyContent: 'space-between', margin: '0 0 0 0'}}
-                   key={game.id}>
-                <div style={{display: 'flex', margin: '10px 0 12px 0px'}}>
-                  {/*<img style={{height: '40px'}} src={game.picture_url} alt={game.name}/> */}
-                  <div style={{marginLeft: '12px'}}>
-                    <div style={{marginTop: '0'}} className={stylesCount.product_card_name}>{game.name}</div>
-                    <div className={stylesCount.product_card_sub_name}>{game.external_data.product_details.value}</div>
+          {filteredGames.length === 0 ? (
+            <div style={{display: 'flex', justifyContent: 'center', marginBottom: '10px'}}
+                 className={stylesCount.product_card_name}>Ничего не найдено</div>
+          ) : (
+            filteredGames.map((game) => (
+              <Link href={`/catalog/${game.slug}`} style={{textDecoration: 'none'}}>
+                <div className={styles.wrapper_cart} style={{display: 'flex', justifyContent: 'space-between', margin: '0 0 0 0'}}
+                     key={game.id}>
+                  <div style={{display: 'flex', margin: '10px 0 12px 0px'}}>
+                    {/*<img style={{height: '40px'}} src={game.picture_url} alt={game.name}/> */}
+                    <div style={{marginLeft: '12px'}}>
+                      <div style={{marginTop: '0'}} className={stylesCount.product_card_name}>{game.name}</div>
+                      <div className={stylesCount.product_card_sub_name}>{game.external_data.product_details.value}</div>
+                    </div>
                   </div>
-                </div>
-                <p style={{display: 'flex', margin: '25px 0 0 0'}}>
-                  <div style={{height: '30px', marginRight: '5px'}}>
-                    {game.old_price != null ?
-                      <>
-                        <div className={stylesCount.prices_discount}>{-calculateDiscount(game.old_price, game.price)}%
-                        </div>
-                      </>
-                      :
-                      <>
-                      </>
-                    }
-                  </div>
-                  <div className={stylesCount.prices_price}>{game.price.toLocaleString('ru-RU')}
-                    <span style={{marginLeft: '3px'}}>
+                  <p style={{display: 'flex', margin: '25px 0 0 0'}}>
+                    <div style={{height: '30px', marginRight: '5px'}}>
+                      {game.old_price != null ?
+                        <>
+                          <div className={stylesCount.prices_discount}>{-calculateDiscount(game.old_price, game.price)}%                        </div>
+                        </>
+                        :
+                        <>
+                        </>
+                      }
+                    </div>
+                    <div className={stylesCount.prices_price}>{game.price.toLocaleString('ru-RU')}
+                      <span style={{marginLeft: '3px'}}>
                 <svg width="16" height="16" viewBox="0 0 201 201"
                      fill="none" xmlns="http://www.w3.org/2000/svg"
                      className="w-[16px] h-[16px] ml-[2px] mb-[1px]">
@@ -124,19 +121,20 @@ const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
                 </g>
               </svg>
               </span>
-                  </div>
-                  <div style={{marginTop: '2px', marginLeft: '5px', marginRight: "12px"}}
-                       className={stylesCount.prices_currency_price}>{game.old_price === null ?
-                    <div>{parseInt(game.price_in_gold).toLocaleString('ru-RU')} ₽</div> :
-                    <div style={{textDecorationLine: 'line-through', display: 'flex'}}>
-                      {game.old_price.toLocaleString('ru-RU')} ₽
                     </div>
-                  }
-                  </div>
-                </p>
-              </div>
-            </Link>
-          ))}
+                    <div style={{marginTop: '2px', marginLeft: '5px', marginRight: "12px"}}
+                         className={stylesCount.prices_currency_price}>{game.old_price === null ?
+                      <div>{parseInt(game.price_in_gold).toLocaleString('ru-RU')} ₽</div> :
+                      <div style={{textDecorationLine: 'line-through', display: 'flex'}}>
+                        {game.old_price.toLocaleString('ru-RU')} ₽
+                      </div>
+                    }
+                    </div>
+                  </p>
+                </div>
+              </Link>
+            ))
+          )}
         </div>
       )}
     </div>

@@ -4,8 +4,8 @@ import React from "react";
 import Error from "@/components/error";
 import MainContent from "@/components/maincontent";
 import MoreCards from "@/components/morecards";
-import TitleCatalog from "@/pages/catalog/titlecatolog";
-import TagsWrapper from "@/pages/catalog/tagswrapper";
+import TitleCatalog from "@/components/catalog/titlecatolog";
+import TagsWrapper from "@/components/catalog/tagswrapper";
 
 interface Props {
   catalog?: any;
@@ -19,8 +19,15 @@ const PageTags: React.FC<Props> = ({ catalog, slugContext }) => {
 
   const title = slugContext.charAt(0).toUpperCase() + slugContext.slice(1)
   const data = require("../../../public/games/tags_catalog.json");
-  const category = data.catalog.find((category: { title: string }) => category.title === "Игры");
-  const tags = category ? category.tags : [];
+  const category = data.catalog.find((category: { href: string }) => category.href === `${slugContext}`);
+  let tags = category ? category.tags : [];
+
+  if (tags.length === 0) {
+    tags = data.catalog
+      .filter((category: { tags: { href: string; }[]; }) =>
+        category.tags.some((tag: { href: string; }) => tag.href === `${slugContext}`))
+      .flatMap((category: { tags: any; }) => category.tags);
+  }
 
   return (
     <Page title={title}>

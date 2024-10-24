@@ -136,3 +136,11 @@
     height: 18px;
     width: 18px;
 }
+@media (max-width: 610px) {
+    .hidden {
+        display: none;
+    }
+    .footer_widget_none {
+        max-width: 500px !important;
+    }
+}

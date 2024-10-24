@@ -1,4 +1,4 @@
-import PageGame from "@/pages/catalog/pagegame";
+import PageCatalog from "@/pages/catalog/pagecatalog";
 
 interface Props {
   catalog?: any;
@@ -6,11 +6,12 @@ interface Props {
 
 export const getServerSideProps = (context: { query: { slug: any; }; }) => {
   const { slug } = context.query;
-  const response = (require("../../public/games/all_shop.json"))
+  const response = require("../../public/games/all_shop.json")
 
   let foundGame = response.data.find((game: {
     slug: any;
     app_id: number; }) => game.slug === slug);
+
 
   if (foundGame === undefined) {
     return {
@@ -24,7 +25,7 @@ export const getServerSideProps = (context: { query: { slug: any; }; }) => {
 };
 
 const SlugContent: React.FC<Props> = ({ catalog }) => {
-  return <PageGame catalog={catalog} />
+  return <PageCatalog catalog={catalog} />
 };
 
 export default SlugContent;

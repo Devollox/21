@@ -112,23 +112,18 @@
     top: calc(100% + 6px);
     width: 100%;
 }
-
-
 .header_search_popup::-webkit-scrollbar {
-    width: 1px;
+    width: 2px;
     border-radius: 12px;
 }
-
 .header_search_popup::-webkit-scrollbar-thumb {
     background: #ffffff;
     border-radius: 12px;
 }
-
 .wrapper_cart {
     transition: background-color .3s ease;
     border-top: 1px solid hsla(0, 0%, 100%, .1);
 }
-
 .wrapper_cart:hover {
     background-color: #ffffff1a;
 }

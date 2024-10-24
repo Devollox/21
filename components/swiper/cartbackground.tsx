@@ -4,7 +4,6 @@ import {data as data} from "../../public/games/config.json"
 import Link from "next/link";
 import Image from "next/image";
 
-
 interface Props {
   title: string;
   alt: string;

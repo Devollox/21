@@ -1,18 +1,12 @@
 import styles from "@/components/swipercart/swipercart.module.css";
-import path from "path";
 import React from "react";
+import useCalculateDiscount from "@/hook/useCalculateDiscount";
 
 interface Props {
   data?: any
 }
 
 const DescriptionCart:React.FC<Props> = ({data}) => {
-  const calculateDiscount = (originalPrice: number, discountedPrice: number): number =>{
-    const discountAmount = originalPrice - discountedPrice;
-    const discountPercentage = (discountAmount / originalPrice) * 100;
-    return Math.round(discountPercentage);
-  }
-
   return (
     <>
       <div className={styles.wrapper_description}>
@@ -20,7 +14,7 @@ const DescriptionCart:React.FC<Props> = ({data}) => {
           <div className={styles.product_price}>
             {data.old_price != null ?
               <>
-                <div className={styles.prices_discount}>{-calculateDiscount(data.old_price, data.price)}%
+                <div className={styles.prices_discount}>{-useCalculateDiscount(data.old_price, data.price)}%
                 </div>
               </>
               :

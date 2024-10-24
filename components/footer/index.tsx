@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <>
       <div className={styles.footer_container}>
-        <div className={styles.footer_links}>
+        <div className={`${styles.footer_links} ${styles.hidden}`}>
           <p className={styles.footer_links_title}>
             Продукты
           </p>
@@ -31,7 +31,7 @@ const Footer = () => {
             Ключи Apple
           </a>
         </div>
-        <div className={styles.footer_links}>
+        <div className={`${styles.footer_links} ${styles.hidden}`}>
           <p className={styles.footer_links_title}>
             Связаться с нами
           </p>
@@ -45,7 +45,7 @@ const Footer = () => {
             Reddit
           </a>
         </div>
-        <div className={styles.footer_links} style={{width: '372px'}}>
+        <div className={`${styles.footer_links} ${styles.footer_widget_none}`} style={{maxWidth: '372px'}}>
           <p className={styles.footer_links_title} style={{marginBottom: '0px'}}>
             Продукты
           </p>

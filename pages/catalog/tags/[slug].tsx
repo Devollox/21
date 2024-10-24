@@ -1,4 +1,5 @@
 import PageTags from "./pagetags";
+import useTypeTag from "@/hook/useGameTags";
 
 interface Props {
   catalog?: any;
@@ -9,18 +10,8 @@ export const getServerSideProps = (context: { query: { slug: any; }; }) => {
   const {slug} = context.query;
   const response = require("../../../public/games/all_shop.json")
 
-  const typeTags: { [key: string]: string } = {
-    "game": 'Game',
-    "rockstar": 'Rockstar',
-    "steam": 'Steam',
-    "nintendo": 'Nintendo',
-    "dlc": 'DLC',
-    "action": 'Action',
-    "popular games": 'Popular Games',
-  };
-
   let foundGame = response.data.filter((game: { tags: { en_name: string; }[]; }) =>
-    game.tags.some((tag: { en_name: string; }) => tag.en_name === `${typeTags[slug]}`)
+    game.tags.some((tag: { en_name: string; }) => tag.en_name === `${useTypeTag(slug)}`)
   );
   if (foundGame === undefined) {
     return {

@@ -3,10 +3,12 @@ import Basket from "@/components/icons/basket";
 import Link from "next/link";
 import Main from "@/components/icons/main";
 import SearchComponent from "@/components/navbar/search";
-
-
+import {BehaviorSubject} from "rxjs";
 
 const Navbar = ({block}: any) => {
+  const cart$ = new BehaviorSubject([]);
+  const cartItems: any = cart$.getValue();
+
   return (
     <>
     <div className={styles.navbar} style={{zIndex: 999}}>
@@ -51,7 +53,8 @@ const Navbar = ({block}: any) => {
                        xmlns="http://www.w3.org/2000/svg">
                     <Basket/>
                   </svg>
-                  <div className={styles.header_control_badge}>19</div>
+                  {cartItems != 0 ? <div className={styles.header_control_badge}>19</div>: <></>}
+
                 </span>
             </div>
           </div>
